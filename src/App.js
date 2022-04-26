@@ -18,10 +18,6 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </main>
-
-      <footer>
-        <Footer />
-      </footer>
     </div>
   )
 }

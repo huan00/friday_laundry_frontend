@@ -1,0 +1,211 @@
+.productContent {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  height: 250px;
+  width: 200px;
+
+  margin: 15px;
+}
+
+.product img {
+  max-width: 200px;
+}
+
+
+.mainBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 30px 0;
+}
+
+.mainBanner h1 {
+  font-size: 3em;
+  font-weight: bolder;
+  margin: 0 0 10px 0;
+}
+
+.mainBanner p {
+  height: 50px;
+  background-color: lime;
+  min-width: fit-content;
+  width: 30%;
+  margin: 0 0 30px 0;;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mid-banner {
+  display: flex;
+  justify-content: center;
+
+  margin: 40px 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.shopNewBtn {
+  width: 100%;
+  margin: 50px 0;;
+
+
+  display: flex;
+  justify-content: center;
+}
+
+.shopNewBtn button {
+  width: 20%;
+  height: 45px;
+  border-radius: 0;
+
+  background-color: black;
+  color:lawngreen;
+  font-size: 1.1em;
+  box-shadow: none;
+  box-decoration-break: none;
+  border: none;
+}
+
+.promotion {
+  display:flex;
+  width: 100%;
+}
+
+.leftPromo {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 5%, rgba(157,255,140,1) 91%);
+}
+
+.leftPromo h3 {
+  margin: 30px 0;
+}
+
+.leftPromo h2 {
+  font-size: 2em;
+}
+
+.leftPromo h1 {
+  margin: 0 0 30px 0;
+  font-size: 5em;
+}
+
+.rightPromo {
+  width: 40%;
+}
+
+.rightPromo img {
+  max-width: 100%;
+}
+
+.bottomBanner-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8em;
+}
+
+.bottomBanner-FA {
+  font-size: 2em;
+}
+
+.bottomBanner {
+  margin: 30px 20px;
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+footer {
+  display: flex;
+  height: 350px
+}
+
+.footerContent {
+  width: 100%;
+  display: grid;
+  grid-template: 3fr 1fr / 1fr 3fr;
+
+  grid-template-areas: 
+  'shopinfo shop-policy'
+  'social copyright';
+
+
+}
+
+.footer-shopInfo {
+  grid-area: shopinfo;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color:white;
+  border: 1px black solid;
+}
+
+.footer-shopInfo * {
+  margin: 10px;
+  text-align: left;
+}
+
+.footer-social {
+  grid-area: social;
+  border: 1px black solid;
+  border-right: none;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  
+}
+
+.footer-copyright {
+  grid-area: copyright;
+  border: 1px black solid;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: limegreen;
+  font-family: 100;
+}
+
+.footer-shopPolicy {
+  grid-area: shop-policy;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font-weight: 100;
+  border: 1px black solid;
+  border-bottom: none;
+}
+
+.footer-shopPolicy h4 {
+  margin: 0 0 20px;
+}
+
+.footer-shopPolicy ul {
+  list-style-type: none;
+}
+
+.footer-shopPolicy li {
+  margin: 10px 0;
+}
