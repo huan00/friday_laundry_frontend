@@ -10,6 +10,7 @@ function App() {
       <Banner
         title={''}
         sub={'Sale is on! 25% off sitewide using TEES25 at checkout'}
+        className={'topBanner'}
       />
       <Nav />
       <main>

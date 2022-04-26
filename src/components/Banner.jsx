@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Banner = ({ title, sub }) => {
+const Banner = ({ title, sub, className }) => {
   return (
-    <div>
+    <div className={className}>
       <h1>{title}</h1>
       <p>{sub}</p>
     </div>
