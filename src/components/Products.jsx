@@ -1,7 +1,15 @@
 import React from 'react'
 import '../styles/ProductDetails.css'
 
-const Products = ({ className, image, price, title, description, rating }) => {
+const Products = ({
+  className,
+  image,
+  price,
+  title,
+  description,
+  rating,
+  addToCart
+}) => {
   return (
     <div className={className}>
       <div className={'img-container'}>
@@ -12,7 +20,9 @@ const Products = ({ className, image, price, title, description, rating }) => {
       {className === 'productDetail' && (
         <>
           <p>Rating: {rating.rate}</p>
-          <button className={'cartBtn'}>add to cart</button>
+          <button className={'cartBtn'} onClick={addToCart}>
+            add to cart
+          </button>
           <p>{description}</p>
         </>
       )}

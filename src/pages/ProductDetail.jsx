@@ -4,14 +4,14 @@ import { useParams } from 'react-router-dom'
 import Products from '../components/Products'
 import { BASE_URL } from '../global'
 
-const ProductDetail = ({ products }) => {
+const ProductDetail = ({ products, setCart, cart }) => {
   const { id } = useParams()
 
   const [product, setProduct] = useState(null)
 
   useEffect(() => {
     getProduct()
-  }, [])
+  }, [cart])
 
   const getProduct = async () => {
     const res = await axios.get(`${BASE_URL}/${id}`)
@@ -19,9 +19,19 @@ const ProductDetail = ({ products }) => {
     setProduct(res.data)
   }
 
+  const addToCart = () => {
+    setCart(cart++)
+  }
+
   return (
     <div>
-      {product && <Products {...product} className={'productDetail'} />}
+      {product && (
+        <Products
+          {...product}
+          className={'productDetail'}
+          addToCart={addToCart}
+        />
+      )}
     </div>
   )
 }

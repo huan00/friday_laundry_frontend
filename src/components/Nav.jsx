@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom'
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons'
 import { faShoppingCart, faSignIn } from '@fortawesome/free-solid-svg-icons'
 
-const Nav = () => {
-  const [cart, setCart] = useState(0)
+const Nav = ({ cart }) => {
   return (
     <div className="navBar">
       <ul className="navUl">
-        <li className="brand">T-Shop</li>
+        <Link to="/">
+          {' '}
+          <li className="brand">T-Shop</li>
+        </Link>
         <li>New</li>
         <li>Women</li>
         <li>Men</li>

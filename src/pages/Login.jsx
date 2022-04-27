@@ -25,7 +25,7 @@ const Login = ({ setUser, toggleAuthenticated }) => {
     })
     setUser(payload)
     toggleAuthenticated(true)
-    // navigate('/')
+    navigate('/')
   }
 
   return (

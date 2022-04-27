@@ -9,15 +9,21 @@ import { BASE_URL } from './global'
 import { useEffect, useState } from 'react'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import { CheckSession } from './services/Auth'
 
 function App() {
   const [products, setProducts] = useState({})
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
+  const [cart, setCart] = useState(0)
 
   useEffect(() => {
     if (!products.length) {
       getProducts()
+    }
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
     }
   }, [])
 
@@ -25,6 +31,13 @@ function App() {
     const res = await axios.get(`${BASE_URL}/?limit=50`)
     setProducts(res.data)
   }
+
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+    toggleAuthenticated(true)
+  }
+
   return (
     <div className="App">
       <Banner
@@ -32,13 +45,19 @@ function App() {
         sub={'Sale is on! 25% off sitewide using TEES25 at checkout'}
         className={'topBanner'}
       />
-      <Nav />
+      <Nav cart={cart} />
       <main>
         <Routes>
           <Route path="/" element={<Home products={products} />} />
           <Route
             path="product/:id"
-            element={<ProductDetail products={products} />}
+            element={
+              <ProductDetail
+                products={products}
+                setCart={setCart}
+                cart={cart}
+              />
+            }
           />
           <Route
             path="login"
