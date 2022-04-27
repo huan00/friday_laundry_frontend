@@ -23,23 +23,24 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (signUpForm.password === confirmPassword) {
-      setDisplayError('none')
-      await RegisterUser(signUpForm)
-      setSignUpForm({
-        email: '',
-        password: '',
-        full_name: '',
-        billing_address: '',
-        default_shipping_address: '',
-        country: '',
-        phone: ''
-      })
-      setConfirmPassword('')
-      navigate('/login')
-    } else {
-      setDisplayError('block')
-    }
+    // if (signUpForm.password === confirmPassword) {
+    //   setDisplayError('none')
+    console.log(signUpForm)
+    await RegisterUser(signUpForm)
+    setSignUpForm({
+      email: '',
+      password: '',
+      full_name: '',
+      billing_address: '',
+      default_shipping_address: '',
+      country: '',
+      phone: ''
+    })
+    setConfirmPassword('')
+    navigate('/login')
+    // } else {
+    //   setDisplayError('block')
+    // }
   }
 
   return (
