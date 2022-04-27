@@ -40,7 +40,15 @@ function App() {
             path="product/:id"
             element={<ProductDetail products={products} />}
           />
-          <Route path="login" element={<Login />} />
+          <Route
+            path="login"
+            element={
+              <Login
+                toggleAuthenticated={toggleAuthenticated}
+                setUser={setUser}
+              />
+            }
+          />
           <Route path="signup" element={<Register />} />
         </Routes>
       </main>

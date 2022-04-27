@@ -15,7 +15,7 @@ const Register = () => {
     phone: ''
   })
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [display, setDisplay] = useState('none')
+  const [displayError, setDisplayError] = useState('none')
 
   const handleChange = (e) => {
     setSignUpForm({ ...signUpForm, [e.target.name]: e.target.value })
@@ -24,7 +24,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (signUpForm.password === confirmPassword) {
-      setDisplay('none')
+      setDisplayError('none')
       await RegisterUser(signUpForm)
       setSignUpForm({
         email: '',
@@ -38,9 +38,10 @@ const Register = () => {
       setConfirmPassword('')
       navigate('/login')
     } else {
-      setDisplay('block')
+      setDisplayError('block')
     }
   }
+
   return (
     <div className="signup">
       <form className="signUpForm" onSubmit={handleSubmit}>
@@ -51,7 +52,10 @@ const Register = () => {
           name="email"
           placeholder="Email"
         />
-        <label htmlFor="password" style={{ display: display, color: 'red' }}>
+        <label
+          htmlFor="password"
+          style={{ display: displayError, color: 'red' }}
+        >
           Passwords does not match
         </label>
         <input
