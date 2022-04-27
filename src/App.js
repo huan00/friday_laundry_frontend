@@ -7,12 +7,13 @@ import Banner from './components/Banner'
 import axios from 'axios'
 import { BASE_URL } from './global'
 import { useEffect, useState } from 'react'
+import Login from './pages/Login'
 
 function App() {
-  const [products, setProducts] = useState(null)
+  const [products, setProducts] = useState({})
 
   useEffect(() => {
-    if (!products) {
+    if (!products.length) {
       getProducts()
     }
   }, [])
@@ -20,7 +21,6 @@ function App() {
   const getProducts = async () => {
     const res = await axios.get(`${BASE_URL}/?limit=50`)
     setProducts(res.data)
-    console.log(res.data)
   }
   return (
     <div className="App">
@@ -37,6 +37,7 @@ function App() {
             path="product/:id"
             element={<ProductDetail products={products} />}
           />
+          <Route path="login" element={<Login />} />
         </Routes>
       </main>
     </div>

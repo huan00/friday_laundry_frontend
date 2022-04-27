@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons'
 import { faShoppingCart, faSignIn } from '@fortawesome/free-solid-svg-icons'
 
@@ -14,9 +15,11 @@ const Nav = () => {
         <li>Women</li>
         <li>Men</li>
         <section>
-          <li>
-            <FontAwesomeIcon icon={faSignIn} /> Log In
-          </li>
+          <Link to={'/login'}>
+            <li>
+              <FontAwesomeIcon icon={faSignIn} /> Log In
+            </li>
+          </Link>
           <li>
             <div>
               <FontAwesomeIcon

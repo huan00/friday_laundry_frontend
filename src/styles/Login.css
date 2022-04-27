@@ -1,0 +1,60 @@
+.login {
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  margin: 50% 0;
+  transform: translateY(-50%);
+}
+
+.login-msg {
+  /* display: flex;
+  flex-direction: column; */
+
+  text-align: center;
+}
+.login-msg * {
+  margin: 20px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm input {
+  border: none;
+  border-bottom: 1px solid gray;
+  color: gray;
+  height: 40px;
+  outline: 0;
+  font-size: 1.2em;
+}
+
+.loginForm input:focus {
+  border-color: green
+}
+
+.loginForm label {
+  margin: 20px 0 0;
+}
+
+.forgotPassword {
+  margin: 20px 0;
+}
+
+.loginBtn {
+  height: 50px;
+  width: 150px;
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(95, 158, 160);
+  color: white;
+  cursor: pointer;
+}
+
+.loginBtn:hover {
+  background-color: rgba(95, 158, 160, .8);
+}

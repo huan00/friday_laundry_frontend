@@ -36,7 +36,7 @@ const Home = ({ products }) => {
         <Banner title={'New Drops'} sub={''} className={'mid-banner'} />
       </section>
       <div className="productContent">
-        {products &&
+        {products.length > 0 &&
           products.map(
             (product) =>
               (product.category === "men's clothing" ||
