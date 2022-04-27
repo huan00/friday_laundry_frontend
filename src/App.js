@@ -8,9 +8,12 @@ import axios from 'axios'
 import { BASE_URL } from './global'
 import { useEffect, useState } from 'react'
 import Login from './pages/Login'
+import Register from './pages/Register'
 
 function App() {
   const [products, setProducts] = useState({})
+  const [authenticated, toggleAuthenticated] = useState(false)
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
     if (!products.length) {
@@ -38,6 +41,7 @@ function App() {
             element={<ProductDetail products={products} />}
           />
           <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Register />} />
         </Routes>
       </main>
     </div>
