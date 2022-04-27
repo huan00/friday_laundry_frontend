@@ -6,14 +6,34 @@
 }
 
 .product {
-  height: 250px;
+  height: 300px;
   width: 200px;
-
   margin: 15px;
+  box-shadow: 5px 5px 5px gray;
+  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-top: 1px gray solid;
+  border-left: 1px gray solid;
+  padding: 20px;
+}
+
+.product h6 {
+  margin: 0 0 5px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .product img {
   max-width: 200px;
+  max-height: 230px;
+  
+  margin: 0 0 15px;
 }
 
 
@@ -78,6 +98,8 @@
 .promotion {
   display:flex;
   width: 100%;
+  height: 700px;
+
 }
 
 .leftPromo {
@@ -106,17 +128,21 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 5%, rgba(157,255,140,1) 91%
 
 .rightPromo {
   width: 40%;
+  background-image: url('https://static.wixstatic.com/media/c837a6_2749f733af59407699862291aaef4b44~mv2.jpg/v1/fill/w_566,h_888,al_c,q_85,enc_auto/c837a6_2749f733af59407699862291aaef4b44~mv2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .rightPromo img {
   max-width: 100%;
+  ;
 }
 
 .bottomBanner-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 
 .bottomBanner-FA {

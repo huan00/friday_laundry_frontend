@@ -1,0 +1,44 @@
+.productDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 70%;
+  margin: 0 auto;
+  
+}
+
+.productDetail * {
+  margin: 10px;
+}
+
+.productDetail h6 {
+  font-size: 1.5em;
+}
+
+.productDetail div {
+  display: flex;
+  justify-content: center;
+}
+
+.productDetail img {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+
+  width: 70%;
+  margin: 50px 0 20px 0;
+}
+
+.cartBtn {
+  width: 100px;
+  height: 30px;
+
+  border: none;
+  cursor: pointer;
+}
+
+.cartBtn:hover {
+  border: 1px solid gray
+}

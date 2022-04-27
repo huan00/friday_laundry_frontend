@@ -1,9 +1,21 @@
 import React from 'react'
+import '../styles/ProductDetails.css'
 
-const Products = ({ className }) => {
+const Products = ({ className, image, price, title, description, rating }) => {
   return (
     <div className={className}>
-      <img src="https://static.wixstatic.com/media/c837a6_fd300737ecf3406b83fd9be5d67463e4~mv2.jpg/v1/fill/w_489,h_653,al_c,q_80,usm_0.66_1.00_0.01/c837a6_fd300737ecf3406b83fd9be5d67463e4~mv2.webp" />
+      <div className={'img-container'}>
+        <img src={image} />
+      </div>
+      <h6>{title}</h6>
+      <p>${price}</p>
+      {className === 'productDetail' && (
+        <>
+          <p>Rating: {rating.rate}</p>
+          <button className={'cartBtn'}>add to cart</button>
+          <p>{description}</p>
+        </>
+      )}
     </div>
   )
 }
