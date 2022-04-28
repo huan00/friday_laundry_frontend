@@ -9,19 +9,20 @@ const Nav = ({ cart }) => {
   return (
     <div className="navBar">
       <ul className="navUl">
-        <Link to="/">
-          {' '}
-          <li className="brand">T-Shop</li>
-        </Link>
+        <li className="brand">
+          <Link to="/">T-Shop</Link>
+        </li>
+
         <li>New</li>
         <li>Women</li>
         <li>Men</li>
         <section>
-          <Link to={'/login'}>
-            <li>
+          <li>
+            <Link to={'/login'}>
               <FontAwesomeIcon icon={faSignIn} /> Log In
-            </li>
-          </Link>
+            </Link>
+          </li>
+
           <li>
             <div>
               <FontAwesomeIcon

@@ -5,8 +5,9 @@
 
   justify-content: center;
   align-items: center;
-  margin: 50% 0;
-  transform: translateY(-50%);
+  /* margin: 50% 0;
+  transform: translateY(-50%); */
+  height: 80vh;
 }
 
 .login-msg {
@@ -61,7 +62,7 @@
 
 .signup {
   width: 40%;
-
+  height: 80vh;
   margin: 50% auto;
   transform: translateY(-50%);
 }

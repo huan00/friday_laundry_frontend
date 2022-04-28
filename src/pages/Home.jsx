@@ -30,11 +30,12 @@ const Home = ({ products }) => {
         />
       </header>
       <section>
-        <Carousel />
+        <Carousel products={products} />
       </section>
       <section>
         <Banner title={'New Drops'} sub={''} className={'mid-banner'} />
       </section>
+
       <div className="productContent">
         {products.length > 0 &&
           products.map(
@@ -47,6 +48,7 @@ const Home = ({ products }) => {
               )
           )}
       </div>
+
       <div>
         <Button text={'Shop New'} className={'shopNewBtn'} />
       </div>

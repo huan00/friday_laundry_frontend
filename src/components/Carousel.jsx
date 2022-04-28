@@ -1,12 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import '../styles/Carousel.css'
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 
-const Carousel = () => {
+const Carousel = ({ products }) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    setTimeout(() => {
+      autoSlide()
+    }, 7000)
+  }, [currentIndex])
+
+  const autoSlide = () => {
+    setCurrentIndex(currentIndex === products.length - 3 ? 0 : currentIndex + 1)
+
+    console.log(currentIndex)
+  }
+
+  const slideLeft = () => {
+    setCurrentIndex(currentIndex === 0 ? products.length - 3 : currentIndex - 1)
+  }
+  const slideRight = () => {
+    setCurrentIndex(currentIndex === products.length - 3 ? 0 : currentIndex + 1)
+  }
   return (
     <div>
-      <img
-        style={{ width: '100%', height: '250px' }}
-        src="https://static.wixstatic.com/media/c837a6_fd300737ecf3406b83fd9be5d67463e4~mv2.jpg/v1/fill/w_489,h_653,al_c,q_80,usm_0.66_1.00_0.01/c837a6_fd300737ecf3406b83fd9be5d67463e4~mv2.webp"
-      />
+      <div className="carousel-container">
+        <FaArrowLeft className="FaLeft" onClick={slideLeft} />
+        <FaArrowRight className="FaRight" onClick={slideRight} />
+        {products.length &&
+          products.map(
+            (product, index) =>
+              index === currentIndex && (
+                <div className="carousel-image" key={product.id}>
+                  <img src={product.image} />
+                  <img src={products[index + 1].image} />
+                  <img src={products[index + 2].image} />
+                </div>
+              )
+          )}
+      </div>
     </div>
   )
 }

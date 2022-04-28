@@ -11,7 +11,7 @@ const ProductDetail = ({ products, setCart, cart }) => {
 
   useEffect(() => {
     getProduct()
-  }, [cart])
+  }, [])
 
   const getProduct = async () => {
     const res = await axios.get(`${BASE_URL}/${id}`)
@@ -19,8 +19,8 @@ const ProductDetail = ({ products, setCart, cart }) => {
     setProduct(res.data)
   }
 
-  const addToCart = () => {
-    setCart(cart++)
+  const addToCart = (x) => {
+    setCart((cart = cart + x))
   }
 
   return (

@@ -4,6 +4,10 @@
   font-family: sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*************************/
 /***********Banner**************/
 /*************************/
@@ -54,9 +58,16 @@
 
 .brand {
   background-color: lime;
+  max-width: 200px;
+  min-width: 175px;
   text-align: left;
   font-weight: 800;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+.brand a {
+  text-decoration: none;
 }
 
 .navUl section {
@@ -82,7 +93,7 @@
 
 .cartItem {
   position: relative;
-  left: -24px;
+  left: -30px;
   top: -11px;
   color: white;
 }
