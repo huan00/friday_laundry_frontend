@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import { CheckSession } from './services/Auth'
+import New from './pages/New'
 
 function App() {
   const [products, setProducts] = useState({})
@@ -69,6 +70,7 @@ function App() {
             }
           />
           <Route path="signup" element={<Register />} />
+          <Route path="new" element={<New products={products} />} />
         </Routes>
       </main>
     </div>
