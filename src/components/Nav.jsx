@@ -16,8 +16,12 @@ const Nav = ({ cart }) => {
         <li>
           <Link to="new">New</Link>
         </li>
-        <li>Women</li>
-        <li>Men</li>
+        <li>
+          <Link to="women">Women</Link>
+        </li>
+        <li>
+          <Link to="men">Men</Link>
+        </li>
         <section>
           <li>
             <Link to={'/login'}>

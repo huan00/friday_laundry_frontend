@@ -11,6 +11,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import { CheckSession } from './services/Auth'
 import New from './pages/New'
+import Women from './pages/Women'
+import Men from './pages/Men'
 
 function App() {
   const [products, setProducts] = useState({})
@@ -71,6 +73,8 @@ function App() {
           />
           <Route path="signup" element={<Register />} />
           <Route path="new" element={<New products={products} />} />
+          <Route path="women" element={<Women products={products} />} />
+          <Route path="men" element={<Men products={products} />} />
         </Routes>
       </main>
     </div>
