@@ -4,9 +4,7 @@
   font-family: sans-serif;
 }
 
-a {
-  text-decoration: none;
-}
+
 
 /*************************/
 /***********Banner**************/
@@ -97,3 +95,13 @@ a {
   top: -11px;
   color: white;
 }
+
+.navBar a {
+  text-decoration: none;
+  color: black
+}
+
+/* .navBar .current {
+  background-color: black;
+  color: white;
+} */

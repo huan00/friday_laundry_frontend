@@ -57,3 +57,8 @@
 footer {
   width: 100%;
 }
+
+.newLink {
+  background-color: black;
+  color:white
+}

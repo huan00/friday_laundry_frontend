@@ -1,18 +1,33 @@
-import Nav from './components/Nav'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import ProductDetail from './pages/ProductDetail'
 import { Route, Routes } from 'react-router'
-import Banner from './components/Banner'
-import axios from 'axios'
 import { BASE_URL } from './global'
 import { useEffect, useState } from 'react'
-import Login from './pages/Login'
-import Register from './pages/Register'
 import { CheckSession } from './services/Auth'
-import New from './pages/New'
-import Women from './pages/Women'
-import Men from './pages/Men'
+
+import Nav from './components/Nav'
+import Home from './pages/Home'
+import ProductDetail from './pages/ProductDetail'
+import Banner from './components/Banner'
+import axios from 'axios'
+// import Login from './pages/Login'
+// import Register from './pages/Register'
+// import New from './pages/New'
+// import Women from './pages/Women'
+// import Men from './pages/Men'
+// import StorePolicy from './pages/StorePolicy'
+// import ShippingReturn from './pages/ShippingReturn'
+// import AboutUs from './pages/AboutUs'
+// import Faq from './pages/Faq'
+import {
+  AboutUs,
+  Login,
+  Register,
+  New,
+  Women,
+  Men,
+  StorePolicy,
+  ShippingReturn,
+  Faq
+} from './pages/index'
 
 function App() {
   const [products, setProducts] = useState({})
@@ -75,6 +90,10 @@ function App() {
           <Route path="new" element={<New products={products} />} />
           <Route path="women" element={<Women products={products} />} />
           <Route path="men" element={<Men products={products} />} />
+          <Route path="storepolicy" element={<StorePolicy />} />
+          <Route path="shippingreturn" element={<ShippingReturn />} />
+          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="faq" element={<Faq />} />
         </Routes>
       </main>
     </div>

@@ -13,7 +13,7 @@ const Nav = ({ cart }) => {
           <Link to="/">T-Shop</Link>
         </li>
 
-        <li>
+        <li className="current">
           <Link to="new">New</Link>
         </li>
         <li>

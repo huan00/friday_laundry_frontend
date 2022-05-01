@@ -20,6 +20,8 @@ const Products = ({
       {className === 'productDetail' && (
         <>
           <p>Rating: {rating.rate}</p>
+          <label htmlFor="size">Size</label>
+          <select name="" id=""></select>
           <button className={'cartBtn'} onClick={() => addToCart(1)}>
             add to cart
           </button>
