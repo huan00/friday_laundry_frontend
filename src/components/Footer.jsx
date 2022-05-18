@@ -22,13 +22,13 @@ const Footer = ({ className }) => {
           <h4>Shop</h4>
           <ul>
             <li>
-              <Link to="new">New</Link>
+              <Link to="/new">New</Link>
             </li>
             <li>
-              <Link to="women">Woman</Link>
+              <Link to="/women">Woman</Link>
             </li>
             <li>
-              <Link to="men">Men</Link>
+              <Link to="/men">Men</Link>
             </li>
           </ul>
         </div>
@@ -36,11 +36,11 @@ const Footer = ({ className }) => {
           <h4>Our Store</h4>
           <ul>
             <li>
-              <Link to="aboutus">About Us</Link>
+              <Link to="/aboutus">About Us</Link>
             </li>
             <li>Subscribe</li>
             <li>
-              <Link to="faq">FAQ</Link>
+              <Link to="/faq">FAQ</Link>
             </li>
           </ul>
         </div>
@@ -48,10 +48,10 @@ const Footer = ({ className }) => {
           <h4>Term & Conditions</h4>
           <ul>
             <li>
-              <Link to="storepolicy">Store Policy</Link>
+              <Link to="/storepolicy">Store Policy</Link>
             </li>
             <li>
-              <Link to="shippingreturn">Shipping & Returns</Link>
+              <Link to="/shippingreturn">Shipping & Returns</Link>
             </li>
             <li>Payment Methods</li>
           </ul>

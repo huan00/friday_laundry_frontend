@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import '../styles/Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
-import { faUserCircle } from '@fortawesome/free-regular-svg-icons'
-import { faShoppingCart, faSignIn } from '@fortawesome/free-solid-svg-icons'
+import { GiShoppingBag } from 'react-icons/gi'
+import { faSignIn } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = ({ cart }) => {
   return (
@@ -31,12 +31,10 @@ const Nav = ({ cart }) => {
 
           <li>
             <div>
-              <FontAwesomeIcon
-                icon={faShoppingCart}
-                size="xl"
-                className="cart"
-              />
-              <span className="cartItem">{cart}</span>
+              <Link to="/cart">
+                <GiShoppingBag className="cart" />
+                <span className="cartItem">{cart}</span>
+              </Link>
             </div>
           </li>
         </section>

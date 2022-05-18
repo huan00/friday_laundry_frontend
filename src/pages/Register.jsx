@@ -25,7 +25,7 @@ const Register = () => {
     e.preventDefault()
     // if (signUpForm.password === confirmPassword) {
     //   setDisplayError('none')
-    console.log(signUpForm)
+
     await RegisterUser(signUpForm)
     setSignUpForm({
       email: '',

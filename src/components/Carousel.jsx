@@ -13,8 +13,6 @@ const Carousel = ({ products }) => {
 
   const autoSlide = () => {
     setCurrentIndex(currentIndex === products.length - 3 ? 0 : currentIndex + 1)
-
-    console.log(currentIndex)
   }
 
   const slideLeft = () => {

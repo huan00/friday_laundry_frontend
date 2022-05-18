@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/ProductDetails.css'
 
 const Products = ({
@@ -10,6 +10,34 @@ const Products = ({
   rating,
   addToCart
 }) => {
+  const [sizes, setSizes] = useState([
+    '',
+    'Small',
+    'Mediumn',
+    'Large',
+    'X-Large'
+  ])
+  const [product, setProduct] = useState({
+    title: title,
+    price: price,
+    size: 'Small',
+    quanity: 1,
+    image: image
+  })
+  const renderQty = (qty) => {
+    const quanities = []
+    for (let i = 1; i < qty; i++) {
+      quanities.push(<option value={i}>{i}</option>)
+    }
+    return quanities
+  }
+
+  const handleOnChangeProduct = (e) => {
+    setProduct({ ...product, [e.target.name]: e.target.value })
+  }
+
+  console.log(product)
+
   return (
     <div className={className}>
       <div className={'img-container'}>
@@ -20,9 +48,20 @@ const Products = ({
       {className === 'productDetail' && (
         <>
           <p>Rating: {rating.rate}</p>
+
           <label htmlFor="size">Size</label>
-          <select name="" id=""></select>
-          <button className={'cartBtn'} onClick={() => addToCart(1)}>
+          <select name="size" id="size" onChange={handleOnChangeProduct}>
+            {sizes.map((size, idx) => (
+              <option value={size} key={idx}>
+                {size}
+              </option>
+            ))}
+          </select>
+          <label htmlFor="qty">Qty</label>
+          <select name="quanity" id="qty" onChange={handleOnChangeProduct}>
+            {renderQty(10)}
+          </select>
+          <button className={'cartBtn'} onClick={() => addToCart(1, product)}>
             add to cart
           </button>
           <p>{description}</p>

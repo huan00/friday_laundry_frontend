@@ -17,7 +17,7 @@ const Women = ({ products }) => {
           products.map(
             (prod, index) =>
               prod.category === "women's clothing" && (
-                <Link to={`/product/${prod.id}`}>
+                <Link to={`/product/${prod.id}`} key={index}>
                   <Products key={prod.id} {...prod} className={'women-prod'} />
                 </Link>
               )

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import Products from '../components/Products'
 import { BASE_URL } from '../global'
 
-const ProductDetail = ({ products, setCart, cart }) => {
+const ProductDetail = ({ setCart, cart, handleCartProduct }) => {
   const { id } = useParams()
 
   const [product, setProduct] = useState(null)
@@ -19,8 +19,9 @@ const ProductDetail = ({ products, setCart, cart }) => {
     setProduct(res.data)
   }
 
-  const addToCart = (x) => {
+  const addToCart = (x, data) => {
     setCart((cart = cart + x))
+    handleCartProduct(data)
   }
 
   return (

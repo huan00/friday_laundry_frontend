@@ -86,6 +86,7 @@
 }
 
 .cart {
+  width: 50px;
   height: 40px;
 }
 
@@ -100,8 +101,3 @@
   text-decoration: none;
   color: black
 }
-
-/* .navBar .current {
-  background-color: black;
-  color: white;
-} */
