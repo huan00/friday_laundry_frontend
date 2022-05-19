@@ -1,3 +1,7 @@
+#root {
+  height: 100vh;
+}
+
 .productContent {
   width: 100%;
   display: flex;

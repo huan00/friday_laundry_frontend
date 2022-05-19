@@ -44,26 +44,26 @@ const Products = ({
       <h6>{title}</h6>
       <p>${price}</p>
       {className === 'productDetail' && (
-        <>
+        <div className="productDetail-content">
           <p>Rating: {rating.rate}</p>
+          <div>
+            <label htmlFor="size">Size</label>
+            <select name="size" id="size" onChange={handleOnChangeProduct}>
+              {sizes.map((size, idx) => (
+                <option value={size} key={idx}>
+                  {size}
+                </option>
+              ))}
+            </select>
+          </div>
 
-          <label htmlFor="size">Size</label>
-          <select name="size" id="size" onChange={handleOnChangeProduct}>
-            {sizes.map((size, idx) => (
-              <option value={size} key={idx}>
-                {size}
-              </option>
-            ))}
-          </select>
           <label htmlFor="qty">Qty</label>
           <select name="quanity" id="qty" onChange={handleOnChangeProduct}>
             {renderQty(10)}
           </select>
-          <button className={'cartBtn'} onClick={() => addToCart(1, product)}>
-            add to cart
-          </button>
+          <button onClick={() => addToCart(1, product)}>add to cart</button>
           <p>{description}</p>
-        </>
+        </div>
       )}
     </div>
   )
