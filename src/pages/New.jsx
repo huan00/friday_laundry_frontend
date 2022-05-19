@@ -23,9 +23,6 @@ const New = ({ products }) => {
               )
           )}
       </div>
-      <footer>
-        <Footer className={'footerContent'} />
-      </footer>
     </div>
   )
 }

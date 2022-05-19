@@ -20,6 +20,8 @@ import {
   Faq
 } from './pages/index'
 import { Cart } from './pages/Cart'
+import Footer from './components/Footer'
+import Account from './pages/Account'
 
 function App() {
   const [products, setProducts] = useState({})
@@ -96,8 +98,13 @@ function App() {
           <Route path="shippingreturn" element={<ShippingReturn />} />
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="faq" element={<Faq />} />
+          /********Account */
+          <Route path="myaccount" element={<Account />} />
         </Routes>
       </main>
+      <footer>
+        <Footer className={'footerContent'} />
+      </footer>
     </div>
   )
 }

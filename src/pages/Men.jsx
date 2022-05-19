@@ -23,9 +23,6 @@ const Men = ({ products }) => {
               )
           )}
       </div>
-      <footer>
-        <Footer className={'footerContent'} />
-      </footer>
     </div>
   )
 }

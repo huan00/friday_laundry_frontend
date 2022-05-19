@@ -66,9 +66,6 @@ const Home = ({ products }) => {
           className={'bottomBanner-FA'}
         />
       </section>
-      <footer>
-        <Footer className={'footerContent'} />
-      </footer>
     </div>
   )
 }
