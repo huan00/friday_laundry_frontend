@@ -101,3 +101,8 @@
   text-decoration: none;
   color: black
 }
+
+.user-icon {
+  font-size: 40px;
+  cursor: pointer;
+}

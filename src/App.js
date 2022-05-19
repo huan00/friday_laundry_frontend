@@ -36,9 +36,12 @@ function App() {
     }
     const token = localStorage.getItem('token')
     if (token) {
+      console.log(token)
       checkToken()
     }
   }, [])
+
+  console.log(user)
 
   const getProducts = async () => {
     const res = await axios.get(`${BASE_URL}/?limit=50`)
@@ -47,6 +50,7 @@ function App() {
 
   const checkToken = async () => {
     const user = await CheckSession()
+    console.log(user)
     setUser(user)
     toggleAuthenticated(true)
   }
@@ -62,7 +66,7 @@ function App() {
         sub={'Sale is on! 25% off sitewide using TEES25 at checkout'}
         className={'topBanner'}
       />
-      <Nav cart={cart} />
+      <Nav cart={cart} user={user} />
       <main>
         <Routes>
           <Route path="/" element={<Home products={products} />} />

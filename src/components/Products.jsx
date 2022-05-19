@@ -36,8 +36,6 @@ const Products = ({
     setProduct({ ...product, [e.target.name]: e.target.value })
   }
 
-  console.log(product)
-
   return (
     <div className={className}>
       <div className={'img-container'}>

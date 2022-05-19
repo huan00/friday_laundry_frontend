@@ -128,7 +128,7 @@ button {
 }
 .myaccount-form input, label {
   display: block;
-  width: 375px;
+  width: 80%;
 }
 
 .myaccount-form input {

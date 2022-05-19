@@ -3,9 +3,10 @@ import '../styles/Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import { GiShoppingBag } from 'react-icons/gi'
-import { faSignIn } from '@fortawesome/free-solid-svg-icons'
+import { MdAccountCircle } from 'react-icons/md'
+import { faSignIn, faZ } from '@fortawesome/free-solid-svg-icons'
 
-const Nav = ({ cart }) => {
+const Nav = ({ cart, user }) => {
   return (
     <div className="navBar">
       <ul className="navUl">
@@ -24,9 +25,15 @@ const Nav = ({ cart }) => {
         </li>
         <section>
           <li>
-            <Link to={'/login'}>
-              <FontAwesomeIcon icon={faSignIn} /> Log In
-            </Link>
+            {user ? (
+              <Link to="/myaccount">
+                <MdAccountCircle className="user-icon" />
+              </Link>
+            ) : (
+              <Link to={'/login'}>
+                <FontAwesomeIcon icon={faSignIn} /> Log In
+              </Link>
+            )}
           </li>
 
           <li>
