@@ -157,7 +157,10 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 5%, rgba(157,255,140,1) 91%
 
 footer {
   display: flex;
-  height: 350px
+  height: 250px;
+  
+  position: relative;
+  bottom: 0;
 }
 
 .footerContent {
