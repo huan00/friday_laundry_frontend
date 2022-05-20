@@ -41,8 +41,6 @@ function App() {
     }
   }, [])
 
-  console.log(user)
-
   const getProducts = async () => {
     const res = await axios.get(`${BASE_URL}/?limit=50`)
     setProducts(res.data)
