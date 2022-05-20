@@ -36,7 +36,6 @@ function App() {
     }
     const token = localStorage.getItem('token')
     if (token) {
-      console.log(token)
       checkToken()
     }
   }, [])
@@ -48,7 +47,6 @@ function App() {
 
   const checkToken = async () => {
     const user = await CheckSession()
-    console.log(user)
     setUser(user)
     toggleAuthenticated(true)
   }

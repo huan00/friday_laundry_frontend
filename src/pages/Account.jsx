@@ -57,7 +57,9 @@ const Account = () => {
       </div>
       <div className="myaccount-nav">
         {nav.map((el, idx) => (
-          <p onClick={() => handleActive(idx)}>{el}</p>
+          <p onClick={() => handleActive(idx)} key={idx}>
+            {el}
+          </p>
         ))}
       </div>
       <div className="myaccount-content">{render()}</div>

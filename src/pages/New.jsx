@@ -17,7 +17,7 @@ const New = ({ products }) => {
           products.map(
             (prod, index) =>
               index < 9 && (
-                <Link to={`/product/${prod.id}`}>
+                <Link to={`/product/${prod.id}`} key={index}>
                   <Products key={prod.id} {...prod} className={'newProd-div'} />
                 </Link>
               )
