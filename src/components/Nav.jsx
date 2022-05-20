@@ -11,7 +11,7 @@ const Nav = ({ cart, user }) => {
     <div className="navBar">
       <ul className="navUl">
         <li className="brand">
-          <Link to="/">T-Shop</Link>
+          <Link to="/">H-Shop</Link>
         </li>
 
         <li className="current">

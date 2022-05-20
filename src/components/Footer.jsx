@@ -13,7 +13,7 @@ const Footer = ({ className }) => {
   return (
     <div className={className}>
       <div className={'footer-shopInfo'}>
-        <h1>T SHOP</h1>
+        <h1>H SHOP</h1>
         <p>Info@mysite.com</p>
         <p>Tel: 123-456-7890</p>
       </div>
@@ -65,7 +65,7 @@ const Footer = ({ className }) => {
         <FontAwesomeIcon icon={faTiktok} />
       </div>
       <div className={'footer-copyright'}>
-        <p>© 2023 by T Shop. Code By Huan</p>
+        <p>© 2023 by H Shop. Code By Huan</p>
       </div>
     </div>
   )
