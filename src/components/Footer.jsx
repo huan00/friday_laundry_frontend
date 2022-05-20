@@ -65,7 +65,7 @@ const Footer = ({ className }) => {
         <FontAwesomeIcon icon={faTiktok} />
       </div>
       <div className={'footer-copyright'}>
-        <p>© 2023 by T Shop. Proudly created with Wix.com</p>
+        <p>© 2023 by T Shop. Code By Huan</p>
       </div>
     </div>
   )

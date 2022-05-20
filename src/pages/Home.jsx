@@ -24,7 +24,7 @@ const Home = ({ products }) => {
     <div>
       <header>
         <Banner
-          title={'T SHOP'}
+          title={'H SHOP'}
           sub={"There's One for Everyone"}
           className={'mainBanner'}
         />
