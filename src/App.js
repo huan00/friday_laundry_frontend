@@ -45,9 +45,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log('trigger')
     setCart(cartProduct.length)
-    localStorage.setItem('cart', JSON.stringify(cartProduct))
   }, [cartProduct])
 
   const getProducts = async () => {
@@ -115,7 +113,7 @@ function App() {
           <Route path="shippingreturn" element={<ShippingReturn />} />
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="faq" element={<Faq />} />
-          /********Account */
+
           <Route path="myaccount" element={<Account />} />
         </Routes>
       </main>

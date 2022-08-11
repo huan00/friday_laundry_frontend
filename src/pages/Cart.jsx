@@ -7,7 +7,6 @@ export const Cart = ({ cartProduct, setCartProduct }) => {
   const cartMsg = 'Cart is empty'
   const continueShopping = 'Continue Shopping'
   const [totalPrice, setTotalPrice] = useState('')
-  const [productEdit, setProductEdit] = useState(true)
 
   useEffect(() => {
     getTotalPrice(cartProduct)
@@ -22,15 +21,9 @@ export const Cart = ({ cartProduct, setCartProduct }) => {
   }
 
   const handleEdit = (index, product) => {
-    setProductEdit((productEdit) => !productEdit)
-
-    if (!productEdit) {
-      cartProduct.splice(index, 1, product)
-    }
+    cartProduct.splice(index, 1, product)
     localStorage.setItem('cart', JSON.stringify(cartProduct))
   }
-
-  console.log(cartProduct)
 
   const handleRemove = (product) => {
     const newProdList = cartProduct.filter(
@@ -56,7 +49,6 @@ export const Cart = ({ cartProduct, setCartProduct }) => {
             <CartProduct
               product={prod}
               key={idx}
-              productEdit={productEdit}
               handleEdit={handleEdit}
               handleRemove={handleRemove}
               index={idx}

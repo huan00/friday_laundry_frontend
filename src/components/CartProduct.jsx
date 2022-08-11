@@ -1,18 +1,19 @@
 import { useState } from 'react'
 
-const CartProduct = ({
-  product,
-  handleEdit,
-  handleRemove,
-  productEdit,
-  index
-}) => {
+const CartProduct = ({ product, handleEdit, handleRemove, index }) => {
   const [editProduct, setEditProduct] = useState({ ...product })
-
+  const [updateProduct, setUpdateProduct] = useState(true)
   const handleUpdatedProduct = (e) => {
     setEditProduct({ ...editProduct, [e.target.name]: e.target.value })
   }
-  console.log({ ...editProduct })
+
+  const handleUpdateProduct = (idx, product) => {
+    setUpdateProduct((updateProduct) => !updateProduct)
+    if (!updateProduct) {
+      handleEdit(idx, product)
+    }
+  }
+
   return (
     <div className="cartProduct">
       <div className="cart-product-content">
@@ -20,7 +21,7 @@ const CartProduct = ({
         <h4>{product.title}</h4>
         <div className="cart-form-container">
           <section className="cart-form">
-            <label for="price">Price:</label>
+            <label htmlFor="price">Price:</label>
             <input
               disabled
               type="text"
@@ -32,16 +33,16 @@ const CartProduct = ({
             <label htmlFor="size">Size:</label>
             <select
               style={{
-                border: `${!productEdit ? '1px solid red' : 'none'}`,
-                color: `${!productEdit ? 'red' : 'black'}`
+                border: `${!updateProduct ? '1px solid red' : 'none'}`,
+                color: `${!updateProduct ? 'red' : 'black'}`
               }}
-              disabled={productEdit}
+              disabled={updateProduct}
               name="size"
               id="size"
               // value={editProduct.size}
               onChange={handleUpdatedProduct}
             >
-              <option selected disabled hidden>
+              <option defaultValue={editProduct.size} disabled hidden>
                 {editProduct.size}
               </option>
               <option value="Small">Small</option>
@@ -54,10 +55,10 @@ const CartProduct = ({
             <label htmlFor="quanity">Quanity:</label>
             <input
               style={{
-                border: `${!productEdit ? '1px solid red' : 'none'}`,
-                color: `${!productEdit ? 'red' : 'black'}`
+                border: `${!updateProduct ? '1px solid red' : 'none'}`,
+                color: `${!updateProduct ? 'red' : 'black'}`
               }}
-              disabled={productEdit}
+              disabled={updateProduct}
               type="text"
               id="quanity"
               name="quanity"
@@ -68,8 +69,8 @@ const CartProduct = ({
         </div>
       </div>
       <div className="cartProduct-control">
-        <p onClick={() => handleEdit(index, editProduct)}>
-          {!productEdit ? 'Update' : 'Edit'}
+        <p onClick={() => handleUpdateProduct(index, editProduct)}>
+          {!updateProduct ? 'Update' : 'Edit'}
         </p>
         <p onClick={() => handleRemove(product)}>Remove</p>
       </div>

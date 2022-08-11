@@ -13,9 +13,9 @@ const Footer = ({ className }) => {
   return (
     <div className={className}>
       <div className={'footer-shopInfo'}>
-        <h1>H SHOP</h1>
-        <p>Info@mysite.com</p>
-        <p>Tel: 123-456-7890</p>
+        <h1>H-SHOP</h1>
+        <p>hello@huan-zeng.com</p>
+        <p>Tel: 917-770-7739</p>
       </div>
       <div className={'footer-shopPolicy'}>
         <div>
