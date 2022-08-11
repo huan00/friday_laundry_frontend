@@ -27,8 +27,12 @@ function App() {
   const [products, setProducts] = useState({})
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-  const [cart, setCart] = useState(0)
-  const [cartProduct, setCartProduct] = useState([])
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem('cart')).length
+  )
+  const [cartProduct, setCartProduct] = useState(
+    JSON.parse(localStorage.getItem('cart'))
+  )
 
   useEffect(() => {
     if (!products.length) {
@@ -39,6 +43,12 @@ function App() {
       checkToken()
     }
   }, [])
+
+  useEffect(() => {
+    console.log('trigger')
+    setCart(cartProduct.length)
+    localStorage.setItem('cart', JSON.stringify(cartProduct))
+  }, [cartProduct])
 
   const getProducts = async () => {
     const res = await axios.get(`${BASE_URL}/?limit=50`)
@@ -51,8 +61,9 @@ function App() {
     toggleAuthenticated(true)
   }
 
-  const handleCartProduct = (data) => {
+  const handleAddCartProduct = (data) => {
     setCartProduct([...cartProduct, data])
+    localStorage.setItem('cart', JSON.stringify([...cartProduct, data]))
   }
 
   return (
@@ -73,7 +84,7 @@ function App() {
                 products={products}
                 setCart={setCart}
                 cart={cart}
-                handleCartProduct={handleCartProduct}
+                handleAddCartProduct={handleAddCartProduct}
               />
             }
           />
@@ -92,7 +103,13 @@ function App() {
           <Route path="men" element={<Men products={products} />} />
           <Route
             path="cart"
-            element={<Cart cart={cart} cartProduct={cartProduct} />}
+            element={
+              <Cart
+                cart={cart}
+                cartProduct={cartProduct}
+                setCartProduct={setCartProduct}
+              />
+            }
           />
           <Route path="storepolicy" element={<StorePolicy />} />
           <Route path="shippingreturn" element={<ShippingReturn />} />

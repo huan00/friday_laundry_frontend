@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { BASE_URL } from '../global'
-import axios from 'axios'
+import React, { useState } from 'react'
 import Banner from '../components/Banner'
 import Button from '../components/Button'
 import Carousel from '../components/Carousel'
-import Footer from '../components/Footer'
 import Products from '../components/Products'
 import Promotion from '../components/Promotion'
 import '../styles/Home.css'
@@ -24,7 +21,7 @@ const Home = ({ products }) => {
     <div>
       <header>
         <Banner
-          title={'H SHOP'}
+          title={'H-SHOP'}
           sub={"There's One for Everyone"}
           className={'mainBanner'}
         />

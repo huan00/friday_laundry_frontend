@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
 import '../styles/Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import { GiShoppingBag } from 'react-icons/gi'
 import { MdAccountCircle } from 'react-icons/md'
-import { faSignIn, faZ } from '@fortawesome/free-solid-svg-icons'
+import { faSignIn } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = ({ cart, user }) => {
   return (

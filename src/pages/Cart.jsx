@@ -3,30 +3,49 @@ import { Link } from 'react-router-dom'
 import CartProduct from '../components/CartProduct'
 import '../styles/Cart.css'
 
-export const Cart = ({ cart, cartProduct }) => {
-  const [cartMsg, setCartMsg] = useState('Cart is empty')
-  const [continueShopping, setContineShopping] = useState('Continue Shopping')
+export const Cart = ({ cartProduct, setCartProduct }) => {
+  const cartMsg = 'Cart is empty'
+  const continueShopping = 'Continue Shopping'
   const [totalPrice, setTotalPrice] = useState('')
+  const [productEdit, setProductEdit] = useState(true)
 
   useEffect(() => {
     getTotalPrice(cartProduct)
   }, [cartProduct])
 
   const getTotalPrice = (data) => {
-    let price = 0
-
-    cartProduct.map((prod) => {
-      price += parseInt(prod.price) * prod.quanity
-    })
-
+    const price = data.reduce(
+      (prev, prod) => prev + parseInt(prod.price) * parseInt(prod.quanity),
+      0
+    )
     setTotalPrice(parseInt(price))
   }
+
+  const handleEdit = (index, product) => {
+    setProductEdit((productEdit) => !productEdit)
+
+    if (!productEdit) {
+      cartProduct.splice(index, 1, product)
+    }
+    localStorage.setItem('cart', JSON.stringify(cartProduct))
+  }
+
+  console.log(cartProduct)
+
+  const handleRemove = (product) => {
+    const newProdList = cartProduct.filter(
+      (prod) => prod.title !== product.title
+    )
+    setCartProduct(newProdList)
+    localStorage.setItem('cart', JSON.stringify(newProdList))
+  }
+
   return (
     <div className="cart-page">
       <div className="cart-title">
         <h3>My cart</h3>
       </div>
-      {cart === 0 ? (
+      {cartProduct.length === 0 ? (
         <div className="cart-empty">
           <p>{cartMsg}</p>
           <Link to="/">{continueShopping}</Link>
@@ -34,12 +53,19 @@ export const Cart = ({ cart, cartProduct }) => {
       ) : (
         <div className="cart-product">
           {cartProduct.map((prod, idx) => (
-            <CartProduct product={prod} />
+            <CartProduct
+              product={prod}
+              key={idx}
+              productEdit={productEdit}
+              handleEdit={handleEdit}
+              handleRemove={handleRemove}
+              index={idx}
+            />
           ))}
         </div>
       )}
       <div className="cart-summary">
-        <p>Order Summary</p>
+        <p>Order Summary:</p>
         <p>Sub Total: ${totalPrice}</p>
       </div>
     </div>

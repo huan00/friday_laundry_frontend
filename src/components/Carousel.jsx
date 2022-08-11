@@ -6,9 +6,13 @@ const Carousel = ({ products }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    setTimeout(() => {
+    let slider = setTimeout(() => {
       autoSlide()
-    }, 7000)
+    }, 3000)
+
+    return () => {
+      setTimeout(slider)
+    }
   }, [currentIndex])
 
   const autoSlide = () => {
