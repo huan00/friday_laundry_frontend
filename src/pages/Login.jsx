@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import '../styles/Login.css'
 import { Link } from 'react-router-dom'
 import { SignInUser } from '../services/Auth'
-import Client from '../services/Client'
 import { useNavigate } from 'react-router-dom'
 
 const Login = ({ setUser, toggleAuthenticated }) => {

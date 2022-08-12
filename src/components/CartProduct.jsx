@@ -39,12 +39,9 @@ const CartProduct = ({ product, handleEdit, handleRemove, index }) => {
               disabled={updateProduct}
               name="size"
               id="size"
-              // value={editProduct.size}
               onChange={handleUpdatedProduct}
             >
-              <option defaultValue={editProduct.size} disabled hidden>
-                {editProduct.size}
-              </option>
+              <option hidden>{editProduct.size}</option>
               <option value="Small">Small</option>
               <option value="Medium">Medium</option>
               <option value="Large">Large</option>

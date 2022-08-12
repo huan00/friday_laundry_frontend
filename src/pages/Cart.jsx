@@ -13,7 +13,7 @@ export const Cart = ({ cartProduct, setCartProduct }) => {
   }, [cartProduct])
 
   const getTotalPrice = (data) => {
-    const price = data.reduce(
+    const price = data?.reduce(
       (prev, prod) => prev + parseInt(prod.price) * parseInt(prod.quanity),
       0
     )
@@ -38,14 +38,14 @@ export const Cart = ({ cartProduct, setCartProduct }) => {
       <div className="cart-title">
         <h3>My cart</h3>
       </div>
-      {cartProduct.length === 0 ? (
+      {cartProduct?.length === 0 ? (
         <div className="cart-empty">
           <p>{cartMsg}</p>
           <Link to="/">{continueShopping}</Link>
         </div>
       ) : (
         <div className="cart-product">
-          {cartProduct.map((prod, idx) => (
+          {cartProduct?.map((prod, idx) => (
             <CartProduct
               product={prod}
               key={idx}

@@ -113,10 +113,11 @@ button {
 
 .myaccount-form {
   display: grid;
-  grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+  grid-template: 1fr 1fr 1fr 1fr/ 1fr 1fr;
   justify-content: space-between;
 
   grid-template-areas: 
+  "input input"
   "input input"
   "input input"
   ". btn";

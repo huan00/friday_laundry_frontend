@@ -19,6 +19,16 @@ export const SignInUser = async (data) => {
   }
 }
 
+export const UpdateUser = async (data) => {
+  try {
+    const res = await Client.put('/customer/update', data)
+    console.log(res.data)
+    return res.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export const CheckSession = async () => {
   try {
     const res = await Client.get('/customer/session')

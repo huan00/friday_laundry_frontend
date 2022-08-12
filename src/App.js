@@ -26,13 +26,9 @@ import Account from './pages/Account'
 function App() {
   const [products, setProducts] = useState({})
   const [authenticated, toggleAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
-  const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem('cart')).length
-  )
-  const [cartProduct, setCartProduct] = useState(
-    JSON.parse(localStorage.getItem('cart'))
-  )
+  const [user, setUser] = useState('')
+  const [cart, setCart] = useState(0)
+  const [cartProduct, setCartProduct] = useState([])
 
   useEffect(() => {
     if (!products.length) {
@@ -42,10 +38,15 @@ function App() {
     if (token) {
       checkToken()
     }
+    if (JSON.parse(localStorage.getItem('cart'))) {
+      setCartProduct(JSON.parse(localStorage.getItem('cart')))
+    }
   }, [])
 
   useEffect(() => {
-    setCart(cartProduct.length)
+    if (cartProduct) {
+      setCart(cartProduct.length)
+    }
   }, [cartProduct])
 
   const getProducts = async () => {
@@ -114,7 +115,7 @@ function App() {
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="faq" element={<Faq />} />
 
-          <Route path="myaccount" element={<Account />} />
+          <Route path="myaccount" element={<Account user={user} />} />
         </Routes>
       </main>
       <footer>
