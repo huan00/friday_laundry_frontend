@@ -2,10 +2,13 @@ import '../styles/Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import { GiShoppingBag } from 'react-icons/gi'
-import { MdAccountCircle } from 'react-icons/md'
+import { MdAccountCircle, MdOutlineLogout } from 'react-icons/md'
 import { faSignIn } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
 
-const Nav = ({ cart, user }) => {
+const Nav = ({ cart, user, handleLogout }) => {
+  const [logoutDisplay, setLogoutDisplay] = useState('none')
+
   return (
     <div className="navBar">
       <ul className="navUl">
@@ -22,7 +25,10 @@ const Nav = ({ cart, user }) => {
         <li>
           <Link to="men">Men</Link>
         </li>
-        <section>
+        <section
+          onMouseEnter={() => setLogoutDisplay('block')}
+          onMouseLeave={() => setLogoutDisplay('none')}
+        >
           <li>
             {user ? (
               <Link to="/myaccount">
@@ -34,7 +40,11 @@ const Nav = ({ cart, user }) => {
               </Link>
             )}
           </li>
-
+          {user && (
+            <div className="logout" style={{ display: `${logoutDisplay}` }}>
+              <MdOutlineLogout className="user-icon" onClick={handleLogout} />
+            </div>
+          )}
           <li>
             <div>
               <Link to="/cart">

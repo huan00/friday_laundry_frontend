@@ -47,11 +47,17 @@ const MyAccount = () => {
 
   const handleSubmitData = async (e) => {
     e.preventDefault()
-    const payload = await UpdateUser(data)
-    // checkToken()
-    setData(payload)
+    const res = await UpdateUser(data)
+    checkToken()
+    setData({ ...res })
   }
 
+  const handleDiscard = (e) => {
+    e.preventDefault()
+    setData({ ...user })
+  }
+
+  const handleDelete = () => {}
   return (
     <div>
       <div className="myaccount-sub">
@@ -113,8 +119,15 @@ const MyAccount = () => {
               />
             </section>
             <section className="myaccount-update-btn bottom-update-btn">
-              <button>Discard</button>
-              <button onClick={handleSubmitData}>Update Info</button>
+              <button onClick={handleSubmitData} className="update-account">
+                Update Info
+              </button>
+              <button onClick={handleDiscard} className="discard-update">
+                Discard
+              </button>
+              <button onClick={handleDelete} className="delete-account">
+                Delete Account
+              </button>
             </section>
           </form>
         </div>

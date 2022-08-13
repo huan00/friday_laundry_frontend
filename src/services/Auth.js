@@ -22,8 +22,8 @@ export const SignInUser = async (data) => {
 export const UpdateUser = async (data) => {
   try {
     const res = await Client.put('/customer/update', data)
-    console.log(res.data)
-    return res.data
+    localStorage.setItem('token', res.data.token)
+    return res.data.customer
   } catch (error) {
     console.log(error)
   }

@@ -120,7 +120,7 @@ button {
   "input input"
   "input input"
   "input input"
-  ". btn";
+  "btn btn";
 }
 
 .bottom-update-btn {
@@ -140,6 +140,17 @@ button {
   padding: 5px 10px;
 }
 
+.delete-account:hover {
+  background-color: red;
+}
+
+.discard-update:hover {
+  background-color: burlywood;
+}
+
+.update-account:hover{
+  background-color: greenyellow;
+}
 /*********My Subscriptions**/
 .myaccount-sub-header h3{
   margin: 0 0 10px 0;

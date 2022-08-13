@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router'
+import { Route, Routes, useNavigate } from 'react-router'
 import { BASE_URL } from './global'
 import { useEffect, useState } from 'react'
 import { CheckSession } from './services/Auth'
@@ -24,6 +24,7 @@ import Footer from './components/Footer'
 import Account from './pages/Account'
 
 function App() {
+  const navigate = useNavigate()
   const [products, setProducts] = useState({})
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState('')
@@ -65,6 +66,12 @@ function App() {
     localStorage.setItem('cart', JSON.stringify([...cartProduct, data]))
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    setUser('')
+    navigate('/')
+  }
+
   return (
     <div className="App">
       <Banner
@@ -72,7 +79,7 @@ function App() {
         sub={'Sale is on! 25% off sitewide using TEES25 at checkout'}
         className={'topBanner'}
       />
-      <Nav cart={cart} user={user} />
+      <Nav cart={cart} user={user} handleLogout={handleLogout} />
       <main>
         <Routes>
           <Route path="/" element={<Home products={products} />} />

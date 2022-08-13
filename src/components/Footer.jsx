@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Footer = ({ className }) => {
   return (
-    <div className={className}>
+    <div className={`${className}  "footer"`}>
       <div className={'footer-shopInfo'}>
         <h1>H-SHOP</h1>
         <p>hello@huan-zeng.com</p>
