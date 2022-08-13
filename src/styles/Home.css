@@ -181,7 +181,8 @@ footer {
   'shopinfo shop-policy'
   'social copyright';
 
-
+  position: absolute;
+  bottom: 0
 }
 
 .footer-shopInfo {

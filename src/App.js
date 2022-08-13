@@ -1,7 +1,7 @@
 import { Route, Routes, useNavigate } from 'react-router'
 import { BASE_URL } from './global'
 import { useEffect, useState } from 'react'
-import { CheckSession } from './services/Auth'
+import { CheckSession, deleteUser } from './services/Auth'
 
 import Nav from './components/Nav'
 import Home from './pages/Home'
@@ -72,6 +72,14 @@ function App() {
     navigate('/')
   }
 
+  const handleDelete = async (e) => {
+    e.preventDefault()
+    await deleteUser(user.id)
+    localStorage.removeItem('token')
+    setUser('')
+    navigate('/')
+  }
+
   return (
     <div className="App">
       <Banner
@@ -122,7 +130,10 @@ function App() {
           <Route path="aboutus" element={<AboutUs />} />
           <Route path="faq" element={<Faq />} />
 
-          <Route path="myaccount" element={<Account user={user} />} />
+          <Route
+            path="myaccount"
+            element={<Account user={user} handleDelete={handleDelete} />}
+          />
         </Routes>
       </main>
       <footer>

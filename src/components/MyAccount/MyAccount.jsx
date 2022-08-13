@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import { CheckSession, UpdateUser } from '../../services/Auth'
+import { CheckSession, UpdateUser, deleteUser } from '../../services/Auth'
+import { useNavigate } from 'react-router-dom'
 
-const MyAccount = () => {
+const MyAccount = ({ handleDelete }) => {
+  const navigate = useNavigate()
   const header = 'My Account'
   const [user, setUser] = useState({
     full_name: '',
@@ -57,9 +59,8 @@ const MyAccount = () => {
     setData({ ...user })
   }
 
-  const handleDelete = () => {}
   return (
-    <div>
+    <div className="account-container">
       <div className="myaccount-sub">
         <div className="myaccount-header">
           <h3>{header}</h3>

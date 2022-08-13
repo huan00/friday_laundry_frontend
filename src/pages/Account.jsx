@@ -8,7 +8,7 @@ import MyWallet from '../components/MyAccount/MyWallet'
 import MyAccount from '../components/MyAccount/MyAccount'
 import '../styles/Account.css'
 
-const Account = () => {
+const Account = ({ handleDelete }) => {
   const nav = [
     'My Orders',
     'My Addresses',
@@ -33,7 +33,7 @@ const Account = () => {
       case 3:
         return <MySubscription />
       default:
-        return <MyAccount />
+        return <MyAccount handleDelete={handleDelete} />
     }
   }
 

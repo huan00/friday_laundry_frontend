@@ -1,0 +1,21 @@
+.store-policy {
+  height: 65vh;
+  padding: 20px
+}
+
+.store-policy h6 {
+  margin: 20px 0 20px 0;
+  font-size: 24px;
+}
+
+.store-policy-payment {
+  margin: 20px 0 0 0;
+}
+
+.store-policy-payment h3 {
+  margin: 0 0 15px 0;
+}
+
+.store-policy-payment ul {
+  padding-left: 20px;
+}

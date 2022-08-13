@@ -1,0 +1,9 @@
+.shipping {
+  height: 65vh;
+  padding: 20px
+}
+
+.shipping h6 {
+  font-size: 18px;
+  margin: 20px 0;
+}

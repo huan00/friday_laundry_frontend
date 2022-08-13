@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import Banner from '../components/Banner'
 
+import '../styles/Faq.css'
+
 const Faq = () => {
   const [bannerMsg, setBannerMsg] = useState('FAQ')
   return (
-    <div>
+    <div className="faq">
       <Banner title={bannerMsg} />
-      <div>
+      <div className="faq-content">
         <h1>Frequently asked questions</h1>
-        <h6>How do I add a new question & answer?</h6>
-        <h6>Can I insert an image, video, or gif in my FAQ?</h6>
-        <h6>How do I edit or remove the "FAQ" title?</h6>
+        <h6>COMING SOON!</h6>
       </div>
     </div>
   )

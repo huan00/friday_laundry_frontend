@@ -29,6 +29,13 @@ export const UpdateUser = async (data) => {
   }
 }
 
+export const deleteUser = async (id) => {
+  try {
+    const res = await Client.delete(`/customer/delete/${id}`)
+    console.log(res)
+  } catch (error) {}
+}
+
 export const CheckSession = async () => {
   try {
     const res = await Client.get('/customer/session')
