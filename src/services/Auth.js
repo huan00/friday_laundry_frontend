@@ -31,8 +31,7 @@ export const UpdateUser = async (data) => {
 
 export const deleteUser = async (id) => {
   try {
-    const res = await Client.delete(`/customer/delete/${id}`)
-    console.log(res)
+    await Client.delete(`/customer/delete/${id}`)
   } catch (error) {}
 }
 
