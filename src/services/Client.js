@@ -1,8 +1,8 @@
 import Axios from 'axios'
 
-export const BASE_URL = 'https://fl-backend.onrender.com'
+// export const BASE_URL = 'https://fl-backend.onrender.com'
 // process.env.NODE_ENV === 'production'
-//   : 'http://localhost:3001'
+export const BASE_URL = 'http://localhost:3001'
 
 // let BASE_URL =
 
